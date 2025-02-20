@@ -1,10 +1,10 @@
-import Campo from "../Campo/Campo";
-import SelecaoOpcoes from "../SelecaoOpcoes/SelecaoOpcoes";
-import Botao from "../Botao/Botao";
-import "./Formulario.css";
+import { Alert, AlertTitle } from "@mui/material";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { getTimes } from "../../dados/dados";
+import Botao from "../Botao/Botao";
+import Campo from "../Campo/Campo";
+import SelecaoOpcoes from "../SelecaoOpcoes/SelecaoOpcoes";
+import "./Formulario.css";
 
 
 
@@ -98,7 +98,7 @@ export function FormAlterarCard({colaborador, alterarIsVisible, aoAlterarForm, t
     <section className="formulario-container" >
       <div className="modal" >
         <form onSubmit={(evento) => submeterFormulario(evento)} className="formulario modal-content"  >
-          <span onClick={() => alterarIsVisible(false)} className="close">&times;</span>
+          <span onClick={() => alterarIsVisible(false)} className="close" title="Fechar" >&times;</span>
           <h2>Altere o card do colaborador</h2>
             <Campo tipo="text" valor={nome} aoAlterar={valor => setNome(valor)} label="Nome" placeholder="Digite seu nome" />
             <Campo tipo="text" valor={cargo} aoAlterar={valor => setCargo(valor)} label="Cargo" placeholder="Digite seu cargo" />
@@ -106,7 +106,10 @@ export function FormAlterarCard({colaborador, alterarIsVisible, aoAlterarForm, t
             <SelecaoOpcoes valor={time} times={times} aoAlterar={valor => setTime(valor)} label="Time"/>
             <Botao texto="Atualizar Card"/>
         </form>
+       
       </div>
+
+      
    </section>
   )
 }

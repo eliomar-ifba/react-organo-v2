@@ -1,17 +1,21 @@
+import { useState } from "react";
 import "./App.css";
 import Banner from "./componentes/Banner/Banner";
-import { FormNovoCard } from "./componentes/Formulario/Formulario";
-import { FormAlterarCard } from "./componentes/Formulario/Formulario";
+import {
+  FormAlterarCard,
+  FormNovoCard,
+} from "./componentes/Formulario/Formulario";
 import Rodape from "./componentes/Rodape/Rodape";
 import Time from "./componentes/Time/Time";
-import { getTimes, getColaboradores } from "./dados/dados";
-import { useState } from "react";
+import { getColaboradores, getTimes } from "./dados/dados";
+import { Alert, AlertTitle, Box, Fade } from "@mui/material";
 
 function App() {
   const [times, setTimes] = useState(getTimes);
   const [colaboradores, setColaboradores] = useState([...getColaboradores()]);
   const [formAlterarIsVisible, setformAlterarIsVisible] = useState(false);
   const [colaboradorFormAlterar, setColaboradorFormAlterar] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
   function criarCard(novoColaborador) {
     setColaboradores([...colaboradores, novoColaborador]);
@@ -22,6 +26,10 @@ function App() {
       (c) => c.id !== colaborador.id
     );
     setColaboradores(novaListaColaboradores);
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 4000);
   }
 
   function abrirCard(colaborador) {
@@ -75,6 +83,20 @@ function App() {
 
   return (
     <div className="App">
+      {/* Apenas abre o alert se sucesso for true */}
+      <Fade in={showAlert} timeout={2000}>  
+        <Alert
+          severity="success"
+          sx={{
+            position: "fixed",
+            width: "100%",
+          }}
+        >
+          <AlertTitle>Sucesso</AlertTitle>
+          Colaborador excluído com sucesso!
+        </Alert>
+      </Fade>
+
       <Banner />
 
       <FormNovoCard

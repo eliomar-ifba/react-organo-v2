@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { Tooltip } from "@mui/material";
+import hexToRgba from "hex-to-rgba";
 import Card from "../Card/Card";
 import "./Time.css";
-import hexToRgba from "hex-to-rgba";
 
 function Time({
   time,
@@ -19,7 +19,11 @@ function Time({
         className="time"
         style={{ backgroundColor: hexToRgba(time.cor, "0.5") }}
       >
-        <input className="cor-time" type="color" value={time.cor} onChange={(evento) => aoMudarCorTime(time, evento.target.value)}/>
+
+      
+        <Tooltip title="Mudar cor do time" placement="top">
+          <input className="cor-time" type="color" value={time.cor} onChange={(evento) => aoMudarCorTime(time, evento.target.value)} title="Mudar cor do time"/>
+        </Tooltip>
 
         <h2 style={{ borderBottom: `4px solid ${time.cor}` }}>{time.nome}</h2>
 
