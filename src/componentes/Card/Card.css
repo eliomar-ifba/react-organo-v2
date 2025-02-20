@@ -1,0 +1,69 @@
+.card-colaborador {
+  width: 262px;
+  background: #f0f0f0;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+}
+
+.card-colaborador .imagem {
+  border-radius: 15px;
+  position: relative;
+  background-color: #e06b69;
+  height: 100px;
+}
+
+.card-colaborador img {
+  position: absolute;
+  width: 120px;
+  border-radius: 50%;
+  top: 35px;
+  left: 70px;
+}
+
+.card-colaborador .dados {
+  margin-top: 70px;
+  padding: 0 10px;
+  /* background: #f0f0f0; */
+  border-radius: 15px;
+}
+
+.card-colaborador .dados h4 {
+  color: #6278f7;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-colaborador .dados p {
+  margin-top: -10px;
+  color: #212121;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card-colaborador .icone-delete,
+.icone-edit {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  color: dimgray;
+}
+
+.card-colaborador .icone-delete:hover,
+.icone-edit:hover {
+  color: black;
+}
+
+.card-colaborador .icone-edit {
+  top: 30px;
+}
+
+.card-colaborador .favorito-area {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+}

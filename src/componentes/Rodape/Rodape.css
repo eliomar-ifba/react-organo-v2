@@ -1,0 +1,41 @@
+.rodape {
+  background: #6278f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 213px;
+  flex-shrink: 0;
+}
+
+.logos-redes {
+  display: flex;
+  gap: 20px;
+}
+
+.logos-redes a {
+  color: white;
+}
+
+.texto-desenvolvidopor {
+  color: #fff;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .rodape {
+    flex-direction: column;
+    height: 300px;
+  }
+
+  .logos-redes {
+    margin-top: 20px;
+    order: 2;
+  }
+
+  .texto-desenvolvidopor {
+    text-align: center;
+  }
+}

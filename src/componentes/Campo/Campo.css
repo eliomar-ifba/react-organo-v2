@@ -1,0 +1,26 @@
+.campo {
+}
+
+.campo label {
+  display: block;
+
+  color: #212121;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.campo input {
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  padding: 18px;
+  border-style: none;
+  height: 70px;
+  width: 100%;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+}

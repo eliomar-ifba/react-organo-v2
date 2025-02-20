@@ -1,0 +1,10 @@
+.banner{
+    text-align: center;
+    background-color: #6278F7;
+    height: 300px;
+    background-image: url("/public/imagens/banner.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
