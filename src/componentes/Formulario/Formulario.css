@@ -5,11 +5,12 @@
 }
 
 .formulario-container .formulario {
-  background-color: #e8f8ff;
+  background-color: #D9F7E9;
+  box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.08);
   margin: 50px 50px;
   padding: 15px 50px 50px 50px;
   border-radius: 20px;
-  /* flex: 1; */
+ 
 }
 
 .formulario h2 {
@@ -32,6 +33,7 @@
 
 .formulario-container .modal-content {
   margin: 5% auto;
+  width: 50%;
 }
 
 .close {
