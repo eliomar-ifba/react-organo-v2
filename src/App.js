@@ -1,3 +1,4 @@
+import { Alert, AlertTitle, Fade } from "@mui/material";
 import { useState } from "react";
 import "./App.css";
 import Banner from "./componentes/Banner/Banner";
@@ -8,7 +9,6 @@ import {
 import Rodape from "./componentes/Rodape/Rodape";
 import Time from "./componentes/Time/Time";
 import { getColaboradores, getTimes } from "./dados/dados";
-import { Alert, AlertTitle, Box, Fade } from "@mui/material";
 
 function App() {
   const [times, setTimes] = useState(getTimes);
@@ -16,9 +16,15 @@ function App() {
   const [formAlterarIsVisible, setformAlterarIsVisible] = useState(false);
   const [colaboradorFormAlterar, setColaboradorFormAlterar] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [messageAlert, setMessageAlert] = useState("");
 
   function criarCard(novoColaborador) {
     setColaboradores([...colaboradores, novoColaborador]);
+    setShowAlert(true);
+    setMessageAlert("Card colaborador criado!");
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 4000);
   }
 
   function deletarCard(colaborador) {
@@ -27,6 +33,7 @@ function App() {
     );
     setColaboradores(novaListaColaboradores);
     setShowAlert(true);
+    setMessageAlert("Colaborador excluído!");
     setTimeout(() => {
       setShowAlert(false);
     }, 4000);
@@ -43,6 +50,11 @@ function App() {
     );
     setColaboradores([...novaListaColaboradores, colaborador]);
     setformAlterarIsVisible(false);
+    setShowAlert(true);
+    setMessageAlert("Colaborador alterado!");
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 4000);
   }
 
   function favoritar(colaborador) {
@@ -83,8 +95,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* Apenas abre o alert se sucesso for true */}
-      <Fade in={showAlert} timeout={2000}>  
+      {/* Apenas abre o alert se showAlert for true */}
+      <Fade in={showAlert} timeout={1000}>
         <Alert
           severity="success"
           sx={{
@@ -93,7 +105,7 @@ function App() {
           }}
         >
           <AlertTitle>Sucesso</AlertTitle>
-          Colaborador excluído com sucesso!
+          {messageAlert}
         </Alert>
       </Fade>
 
