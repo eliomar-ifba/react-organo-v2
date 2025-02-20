@@ -24,7 +24,7 @@ function App() {
     setMessageAlert("Card colaborador criado!");
     setTimeout(() => {
       setShowAlert(false);
-    }, 4000);
+    }, 3000);
   }
 
   function deletarCard(colaborador) {
@@ -36,7 +36,7 @@ function App() {
     setMessageAlert("Colaborador excluído!");
     setTimeout(() => {
       setShowAlert(false);
-    }, 4000);
+    }, 3000);
   }
 
   function abrirCard(colaborador) {
@@ -54,7 +54,7 @@ function App() {
     setMessageAlert("Colaborador alterado!");
     setTimeout(() => {
       setShowAlert(false);
-    }, 4000);
+    }, 3000);
   }
 
   function favoritar(colaborador) {
@@ -99,6 +99,7 @@ function App() {
       <Fade in={showAlert} timeout={1000}>
         <Alert
           severity="success"
+          variant="filled"
           sx={{
             position: "fixed",
             width: "100%",
