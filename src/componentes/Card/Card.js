@@ -14,7 +14,6 @@ function Card({ colaborador, aoDeletarCard, aoFavoritar, aoAlterarCard }) {
           <DeleteForeverIcon
             className="icone-delete"
             onClick={() => {aoDeletarCard(colaborador)}}
-            title="Deletar card"
           />
         </Tooltip>
 

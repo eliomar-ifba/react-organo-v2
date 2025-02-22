@@ -22,7 +22,7 @@ function Time({
 
       
         <Tooltip title="Mudar cor do time" placement="top">
-          <input className="cor-time" type="color" value={time.cor} onChange={(evento) => aoMudarCorTime(time, evento.target.value)} title="Mudar cor do time"/>
+          <input className="cor-time" type="color" value={time.cor} onChange={(evento) => aoMudarCorTime(time, evento.target.value)} />
         </Tooltip>
 
         <h2 style={{ borderBottom: `4px solid ${time.cor}` }}>{time.nome}</h2>

@@ -57,6 +57,12 @@ function App() {
     }, 3000);
   }
 
+  window.onclick = (event) => {
+    if (event.target.className === "modal") {
+      setformAlterarIsVisible(false);
+    }
+   };
+
   function favoritar(colaborador) {
     console.log("Colaborador favoritado: ", colaborador);
     const novaListaColaboradores = colaboradores.map((c) => {

@@ -94,12 +94,14 @@ export function FormAlterarCard({colaborador, alterarIsVisible, aoAlterarForm, t
     aoAlterarForm(colaboradorAtualizado)
   }
 
+ 
+
   return(
     <section className="formulario-container" >
       <div className="modal" >
         <form onSubmit={(evento) => submeterFormulario(evento)} className="formulario modal-content"  >
           <Tooltip title="Fechar" placement="bottom">
-            <span onClick={() => alterarIsVisible(false)} className="close" title="Fechar" >&times;</span>
+            <span onClick={() => alterarIsVisible(false)} className="close">&times;</span>
           </Tooltip>
           <h2>Altere o card do colaborador</h2>
             <Campo tipo="text" valor={nome} aoAlterar={valor => setNome(valor)} label="Nome" placeholder="Digite seu nome" />
@@ -114,5 +116,6 @@ export function FormAlterarCard({colaborador, alterarIsVisible, aoAlterarForm, t
       
    </section>
   )
+  
 }
 
